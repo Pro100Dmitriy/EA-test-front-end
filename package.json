@@ -1,0 +1,27 @@
+{
+  "name": "ea-test-front-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pro100Dmitriy/EA-test-front-end.git"
+  },
+  "author": "Dmitry Shestak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pro100Dmitriy/EA-test-front-end/issues"
+  },
+  "homepage": "https://github.com/Pro100Dmitriy/EA-test-front-end#readme",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.6",
+    "nodemon": "^2.0.15"
+  }
+}

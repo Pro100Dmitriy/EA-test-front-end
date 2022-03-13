@@ -101,11 +101,13 @@ document.addEventListener( 'DOMContentLoaded', () => {
         
         if( isEmail( email ) ){
             const subsriberData = { email }
-            request( 'http://localhost:3001/emails', 'POST', subsriberData )
+            request( 'http://localhost:5000/api/subscribe/', 'POST', subsriberData )
                 .then( data => {
+                    console.log( data )
                     popup.startLoad()
                 } )
                 .then( data => {
+                    console.log( data )
                     popup.loaded()
                 } )
                 .catch( error => console.log( error ) )
