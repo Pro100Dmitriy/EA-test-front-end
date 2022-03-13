@@ -11,13 +11,16 @@
 
     <div id="popup" class="popup">
         <div class="popup__wrapper">
-            <div class="message">
+            <div id="loader" class="message-loader">
+                <span class="el-loader">loading...</span>
+            </div>
+            <div id="message" class="message">
                 <div class="message__close">
                     <button id="close-popup" class="el-close">Close</button>
                 </div>
                 <div class="message__content">
-                    <h3 class="h3">Success!</h3>
-                    <p class="message-st">You have successfully subscribed to the email newsletter</p>
+                    <h3 id="message-title" class="h3">Success!</h3>
+                    <p id="message-info" class="message-st">You have successfully subscribed to the email newsletter</p>
                     <button id="close-popup" class="el-button">Close</button>
                 </div>
             </div>
@@ -106,6 +109,7 @@
         </div>
     </footer>
 
+    <script src="./assets/js/timer.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 </html>
