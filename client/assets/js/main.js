@@ -16,9 +16,11 @@ const popupModule = () => {
             popup.classList.add('popup-open')
             loader.classList.add('loader-open')
         },
-        loaded(){
+        loaded( data ){
             loader.classList.remove('loader-open')
             message.classList.add('message-open')
+            messageTitle.innerHTML = data.title
+            messageInfo.innerHTML = data.message
         },
         open(){
             popup.classList.add('popup-open')
@@ -63,20 +65,6 @@ const isEmail = ( initialValue ) => {
     }
 }
 
-async function request( url, method = 'GET', body = null, headers = {'Content-Type': 'application/json'} ){
-    try{
-        const response = await fetch( url, { method, body: JSON.stringify( body ), headers } )
-        if( !response.ok ) throw new Error( 'Error' )
-
-        return new Promise( ( resolve, reject ) => {
-            setTimeout( () => {
-                resolve( response.json() )
-            }, 500 )
-        } )
-    }catch( error ){
-        console.log( error )
-    }
-}
 
 
 
@@ -101,16 +89,22 @@ document.addEventListener( 'DOMContentLoaded', () => {
         
         if( isEmail( email ) ){
             const subsriberData = { email }
-            request( 'http://localhost:5000/api/subscribe/', 'POST', subsriberData )
+            fetch( 'http://localhost:5000/api/subscribe/', { method: 'POST', body: JSON.stringify( subsriberData ), headers: {'Content-Type': 'application/json'} } )
                 .then( data => {
-                    console.log( data )
+                    subscribeForm.inputClear()
                     popup.startLoad()
+                    return data.json()
                 } )
-                .then( data => {
-                    console.log( data )
-                    popup.loaded()
+                .then( response => {
+                    setTimeout( () => { popup.loaded( response ) }, 200 )
                 } )
-                .catch( error => console.log( error ) )
+                .catch( error => {
+                    popup.startLoad()
+                    setTimeout( () => { popup.loaded( {
+                        title: 'Error',
+                        message: 'An unexpected error occurred!'
+                    } ) }, 200 )
+                } )
         }else{
             subscribeForm.inputClear()
             subscribeForm.disable()

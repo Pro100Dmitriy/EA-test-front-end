@@ -1,7 +1,7 @@
+const path = require('path')
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-const cors = require('cors')
 
 const route = require('./routes/subsribe')
 const keys = require('./config/keys')
@@ -14,17 +14,13 @@ mongoose.connect( keys.mongoURI )
 
 app.use( bodyParser.urlencoded({extended: true}) )
 app.use( bodyParser.json() )
-app.use( cors( {
-    credentials: true,
-    origin: keys.API_URL
-} ) )
 
 app.use( '/api', route )
 
 app.use(express.static('./client'))
 
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'index.html'))
+    res.sendFile(path.resolve(__dirname, '../', 'client', 'index.html'))
 })
 
 module.exports = app

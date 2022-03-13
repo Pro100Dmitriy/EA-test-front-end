@@ -9,6 +9,14 @@
 </head>
 <body>
 
+    <div class="page-load load-hidden">
+        <div class="page-load__wrapper">
+            <div id="loader" class="page-load-loader">
+                <span class="el-loader">loading...</span>
+            </div>
+        </div>
+    </div>
+
     <div id="popup" class="popup">
         <div class="popup__wrapper">
             <div id="loader" class="message-loader">
@@ -20,7 +28,7 @@
                 </div>
                 <div class="message__content">
                     <h3 id="message-title" class="h3">Success!</h3>
-                    <p id="message-info" class="message-st">You have successfully subscribed to the email newsletter</p>
+                    <p id="message-info" class="message-st">You have successfully subscribed to the email newsletter.</p>
                     <button id="close-popup" class="el-button">Close</button>
                 </div>
             </div>
@@ -33,7 +41,7 @@
             <img class="bg-vector bg-vector--right" src="./assets/img/Bg-right-vector.svg" alt="Logo">
         </div>
         <div class="header__logo">
-            <a class="logo-link" href="#">
+            <a class="logo-link" href="/">
                 <img class="logo" src="./assets/img/Logo.svg" alt="Logo">
             </a>
         </div>
@@ -89,7 +97,7 @@
                 </div>
                 <div class="main__wrapper__bottom">
                     <p class="regular">Check our event page when you wait:</p>
-                    <a href="#" class="el-link-button">Go to the event<img src="./assets/img/Arrow-right.svg" alt="Arrow right"/></a>
+                    <a href="https://github.com/Pro100Dmitriy/EA-test-front-end" class="el-link-button">Go to the event<img src="./assets/img/Arrow-right.svg" alt="Arrow right"/></a>
                 </div>
             </div>
         </div>
@@ -100,7 +108,7 @@
             <div class="footer__wrapper">
                 <form id="subscribe" class="subscribe">
                     <div class="subscribe__errors err-hidden">
-                        <span class="">It is not email!</span>
+                        <span class="error-st">It is not email!</span>
                     </div>
                     <input type="email" class="subscribe__input" placeholder="Enter your Email and get notified">
                     <button type="submit" class="subscribe__submit"><img src="./assets/img/Arrow-right.svg" alt="Arrow right"></button>
