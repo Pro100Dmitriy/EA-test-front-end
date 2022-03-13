@@ -14,10 +14,9 @@ mongoose.connect( keys.mongoURI )
 
 app.use( bodyParser.urlencoded({extended: true}) )
 app.use( bodyParser.json() )
-console.log( keys.CLIENT_URL )
 app.use( cors( {
     credentials: true,
-    origin: keys.CLIENT_URL
+    origin: keys.API_URL
 } ) )
 
 app.use( '/api', route )
