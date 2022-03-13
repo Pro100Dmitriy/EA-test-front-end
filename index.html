@@ -8,6 +8,21 @@
     <link rel="stylesheet" href="./assets/styles/style.css">
 </head>
 <body>
+
+    <div id="popup" class="popup">
+        <div class="popup__wrapper">
+            <div class="message">
+                <div class="message__close">
+                    <button id="close-popup" class="el-close">Close</button>
+                </div>
+                <div class="message__content">
+                    <h3 class="h3">Success!</h3>
+                    <p class="message-st">You have successfully subscribed to the email newsletter</p>
+                    <button id="close-popup" class="el-button">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <header class="header">
         <div class="header__bg">
@@ -80,7 +95,10 @@
     <footer class="footer">
         <div class="container">
             <div class="footer__wrapper">
-                <form id="subscribe" class="subscribe" method="post">
+                <form id="subscribe" class="subscribe">
+                    <div class="subscribe__errors err-hidden">
+                        <span class="">It is not email!</span>
+                    </div>
                     <input type="email" class="subscribe__input" placeholder="Enter your Email and get notified">
                     <button type="submit" class="subscribe__submit"><img src="./assets/img/Arrow-right.svg" alt="Arrow right"></button>
                 </form>
