@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./server/index.js",
     "build": "npm install",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build && npm run start"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,6 @@
   "homepage": "https://github.com/Pro100Dmitriy/EA-test-front-end#readme",
   "dependencies": {
     "body-parser": "^1.19.2",
-    "cors": "^2.8.5",
     "express": "^4.17.3",
     "mongoose": "^6.2.6",
     "nodemon": "^2.0.15"
