@@ -22,12 +22,10 @@ app.use( cors( {
 
 app.use( '/api', route )
 
-if( process.env.NODE_ENV === 'production' ){
-    app.use(express.static('./client'))
+app.use(express.static('./client'))
 
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'index.html'))
-    })
-}
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'index.html'))
+})
 
 module.exports = app
