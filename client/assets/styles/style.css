@@ -582,6 +582,8 @@ input{
 }
 .footer .footer__wrapper .subscribe .subscribe__submit:disabled{
     background: #c7c7c7;
+    -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
 }
 .footer .footer__wrapper .subscribe .subscribe__submit:hover{

@@ -99,6 +99,8 @@ document.addEventListener( 'DOMContentLoaded', () => {
                     setTimeout( () => { popup.loaded( response ) }, 200 )
                 } )
                 .catch( error => {
+                    console.log( error )
+                    subscribeForm.inputClear()
                     popup.startLoad()
                     setTimeout( () => { popup.loaded( {
                         title: 'Error',
