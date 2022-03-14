@@ -11,11 +11,18 @@ function isEmail( initialValue ){
 
 function request( url, method='GET', body=null, headers={ 'Content-Type': 'application/json' } ){
     return new Promise( async ( resolve, reject ) => {
-        const response = await fetch( url, { method, body: JSON.stringify( body ), headers } )
-        if( response.ok ){
-            const data = response.json()
-            resolve( data )
-        }else{
+        try{
+            const response = await fetch( url, { method, body: JSON.stringify( body ), headers } )
+            if( response.ok ){
+                const data = response.json()
+                resolve( data )
+            }else{
+                reject( {
+                    title: 'Error',
+                    message: 'An unexpected error occurred!'
+                } )
+            }
+        }catch( error ){
             reject( {
                 title: 'Error',
                 message: 'An unexpected error occurred!'

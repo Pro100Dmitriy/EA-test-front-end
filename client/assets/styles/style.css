@@ -268,7 +268,7 @@ input{
     opacity: 1;
     visibility: visible;
     transition-timing-function: cubic-bezier(1,0,.52,1.01);
-    transition: all 1s ease;
+    transition: transform 1s ease;
 }
 .page-load .page-load__wrapper{
     position: relative;
