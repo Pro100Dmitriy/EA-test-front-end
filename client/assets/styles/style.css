@@ -118,7 +118,7 @@ input{
 
 /* --------------------- Font Style end */
 
-/* --------------------- Conmponents begin */
+/* --------------------- Components begin */
 
 .el-link-button{
     display: inline-flex;
@@ -240,7 +240,7 @@ input{
 .el-close:hover::after{
     transform: translate(-50%, -50%) rotate(0);
 }
-/* --------------------- Conmponents end */
+/* --------------------- Components end */
 
 .container{
     max-width: 1560px;

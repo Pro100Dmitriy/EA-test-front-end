@@ -15,6 +15,7 @@ const pageloadModule = () => {
     }
 }
 
+
 const popupModule = () => {
     const popup = document.querySelector('#popup')
     const message = popup.querySelector('#message')
@@ -46,7 +47,8 @@ const popupModule = () => {
     }
 }
 
-const formModul = () => {
+
+const formModule = () => {
     const subscribeForm = document.querySelector('#subscribe')
     const error = subscribeForm.querySelector('.subscribe__errors')
     const input = subscribeForm.querySelector('.subscribe__input')
@@ -71,6 +73,8 @@ const formModul = () => {
     }
 }
 
+
+
 const pageload = pageloadModule()
 
 document.addEventListener( 'DOMContentLoaded', () => {
@@ -84,7 +88,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
     })
 
     /** Subscribe  */
-    const subscribeForm = formModul()
+    const subscribeForm = formModule()
     const popup = popupModule()
 
     subscribeForm.form.addEventListener( 'submit', subscribe )
