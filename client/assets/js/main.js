@@ -99,10 +99,16 @@ document.addEventListener( 'DOMContentLoaded', () => {
             popup.startLoad()
             request( 'http://localhost:5000/api/subscribe/', 'POST', subsriberData )
                 .then( response => {
-                    setTimeout( () => { popup.loaded( response ) }, 200 )
+                    setTimeout( () => {
+                        subscribeForm.inputClear()
+                        popup.loaded( response )
+                    }, 200 )
                 } )
                 .catch( error => {
-                    setTimeout( () => { popup.loaded( error ) }, 200 )
+                    setTimeout( () => {
+                        subscribeForm.inputClear()
+                        popup.loaded( error )
+                    }, 200 )
                 } )
         }else{
             subscribeForm.inputClear()

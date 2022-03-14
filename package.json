@@ -12,7 +12,7 @@
     "start": "node ./server/index.js",
     "dev": "nodemon ./server/index.js",
     "build": "npm install",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=true npm run build"
   },
   "repository": {
     "type": "git",
