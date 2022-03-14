@@ -97,7 +97,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
         if( isEmail( email ) ){
             const subsriberData = { email }
             popup.startLoad()
-            request( 'http://localhost:5000/api/subscribe/', 'POST', subsriberData )
+            request( `${window.location.href}/api/subscribe/`, 'POST', subsriberData )
                 .then( response => {
                     setTimeout( () => {
                         subscribeForm.inputClear()
