@@ -6,7 +6,7 @@ module.exports.subscribe = async function( req, res ){
         if( email ){
             res.status( 200 ).json({
                 title: 'Oy!',
-                message: 'This email already added!'
+                message: 'This email has already added!'
             })
         }else{
             const candidate = new Subscriber({
