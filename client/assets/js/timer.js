@@ -1,18 +1,18 @@
 class Timer{
     constructor( {initialDate, timerId} ){
         this.wrapper = document.querySelector( `#${timerId}` ) ?? null
+        this.initialDate = Date.parse( initialDate )
 
         if( !this.wrapper ) return
 
-        this.initialDate = Date.parse( initialDate )
-
-        function loop(){
-            requestAnimationFrame( loop.bind(this) )
-            this.update()
-        }
-        loop.bind(this)()
+        this.loop.bind(this)()
 
         this.windowResize()
+    }
+
+    loop(){
+        this.reqAnimFrame = requestAnimationFrame( this.loop.bind(this) )
+        this.update()
     }
 
     windowResize(){
@@ -25,6 +25,11 @@ class Timer{
     update(){
         this.now = Date.now()
         this.gap = this.initialDate - this.now
+        
+        if( this.initialDate < this.now ){
+            cancelAnimationFrame( this.reqAnimFrame )
+            return
+        }
 
         this.days()
         this.hours()
