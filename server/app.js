@@ -17,10 +17,10 @@ app.use( bodyParser.json() )
 
 app.use( '/api', route )
 
-app.use(express.static('./client'))
+app.use( express.static('./client') )
 
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../', 'client', 'index.html'))
+    res.status(200).sendFile(path.resolve(__dirname, '../', 'client', 'index.html'))
 })
 
 module.exports = app
