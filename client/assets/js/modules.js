@@ -53,6 +53,10 @@ const formModule = () => {
     const error = subscribeForm.querySelector('.js-subscribe__errors')
     const input = subscribeForm.querySelector('.js-subscribe__input')
     const button = subscribeForm.querySelector('.js-subscribe__submit')
+
+    const errorsMessage = error.innerHTML
+    error.innerHTML = ''
+
     return {
         form: subscribeForm,
         inputClear(){
@@ -65,10 +69,16 @@ const formModule = () => {
             button.disabled = false
         },
         showError(){
-            error.classList.remove('subscribe__errors_hidden')
+            error.insertAdjacentHTML('afterbegin', errorsMessage)
+            setTimeout( () => {
+                error.classList.remove('subscribe__errors_hidden')
+            }, 300 )
         },
         hideError(){
             error.classList.add('subscribe__errors_hidden')
+            setTimeout( () => {
+                error.innerHTML = ''
+            }, 300 )
         }
     }
 }

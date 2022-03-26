@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto&display=swap');
-
-
 /* --------------------- Reset begin */
 body{
     padding: 0;
@@ -100,6 +97,7 @@ input{
     .h1{
         font-size: 36px;
     }
+
     .h2{
         font-size: 36px;
     }
@@ -128,15 +126,18 @@ input{
 
 .loader__spiner{
     position: relative;
-    display: block;
+    
     text-indent: -9999px;
+    display: block;
     width: 50px;
     height: 50px;
+    
     border-top: 4px solid #ffffff;
     border-right: 4px solid #ffffff;
     border-bottom: 4px solid rgba(255, 255, 255, 0);
     border-left: 4px solid rgba(255, 255, 255, 0);
     border-radius: 50px;
+
     -webkit-animation: animation-spiner 1.1s infinite linear;
     animation: animation-spiner 1.1s infinite linear;
 }
@@ -154,12 +155,12 @@ input{
 
 @keyframes animation-spiner{
     0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
@@ -172,91 +173,115 @@ input{
 .close-button{
     box-sizing: border-box;
 }
+
 .close-button__cross{
     position: relative;
+
+    margin: 0;
+    padding: 0;
+
     display: block;
     width: 24px;
     height: 24px;
+
     text-indent: -9999px;
     background: none;
     border: none;
-    margin: 0;
-    padding: 0;
 }
+
 .close-button__cross::before{
-    content: '';
-    display: block;
     position: absolute;
     top: 50%;
     left: 50%;
     z-index: 1;
+
+    content: '';
+    display: block;
+    width: 33.94px;
+    height: 2px;
+    
+    border-radius: 5px;
+    background: rgba(19, 89, 120, .5);
+
     transform: translate(-50%, -50%) rotate(45deg);
-    width: 33.94px;
-    height: 2px;
-    border-radius: 5px;
-    background: rgba(19, 89, 120, 0.5);
     transition: all 0.3s ease;
 }
+
 .close-button__cross::after{
-    content: '';
-    display: block;
     position: absolute;
     top: 50%;
     left: 50%;
     z-index: 1;
-    transform: translate(-50%, -50%) rotate(-45deg);
+
+    content: '';
+    display: block;
     width: 33.94px;
     height: 2px;
+    
     border-radius: 5px;
-    background: rgba(19, 89, 120, 0.5);
+    background: rgba(19, 89, 120, .5);
+
+    transform: translate(-50%, -50%) rotate(-45deg);
     transition: all 0.3s ease;
 }
+
 .close-button__cross:hover::before{
     transform: translate(-50%, -50%) rotate(0);
 }
+
 .close-button__cross:hover::after{
     transform: translate(-50%, -50%) rotate(0);
 }
 
 .el-link-button{
+    padding: 16px 28px;
+
     display: inline-flex;
     align-items: center;
-    padding: 16px 28px;
-    text-decoration: none;
+    
     color: #ffffff;
+    background: #1D4169;
+    border-radius: 40px;
+    text-decoration: none;
+
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 150%;
-    background: #1D4169;
-    border-radius: 40px;
+
     transition: all 0.3s ease;
 }
+
 .el-link-button__icon{
     margin-left: 34px;
     fill: none;
 }
+
 .el-link-button:hover{
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .4);
 }
 
 .el-button{
+    padding: 16px 74px;
+
     display: inline-flex;
     align-items: center;
-    padding: 16px 74px;
+
     color: #ffffff;
+    background: #1D4169;
+    border-radius: 40px;
+
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 150%;
-    background: #1D4169;
-    border-radius: 40px;
+    
     transition: all 0.3s ease;
 }
 .el-button:hover{
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .4);
 }
 /* --------------------- Components end */
 
@@ -277,14 +302,17 @@ input{
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 100;
+
+    visibility: visible;
     width: 100%;
     height: 100%;
-    z-index: 100;
+
     background:#ffffff;
+    opacity: 1;
+    
     transform-origin: top;
     transform: scaleY( 1 );
-    opacity: 1;
-    visibility: visible;
     transition-timing-function: cubic-bezier(1,0,.52,1.01);
     transition: transform 1s ease;
 }
@@ -300,7 +328,7 @@ input{
     top: 50%;
     left: 50%;
     transform: translate( -50%, -50% );
-    transition: all 0.4s ease;
+    transition: all .4s ease;
 }
 
 
@@ -309,13 +337,16 @@ input{
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 10;
+
     width: 100%;
     height: 100%;
-    z-index: 10;
+
     background: rgba(19,89, 120, 0.6);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+
+    transition: all .3s ease;
 }
 
 .popup_open{
@@ -325,6 +356,7 @@ input{
 
 .popup__wrapper{
     position: relative;
+
     width: 100%;
     height: 100%;
 }
@@ -333,10 +365,12 @@ input{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 1;
+
     opacity: 0;
     visibility: hidden;
+
+    transform: translate(-50%, -50%);
     transition: all 0.3s ease;
 }
 
@@ -349,36 +383,42 @@ input{
     position: absolute;
     top: 60%;
     left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 2;
+
+    transform: translate(-50%, -50%);
 }
 
 .popup__message_open{
     top: 50% !important;
+
     opacity: 1 !important;
     visibility: visible !important;
 }
 
 /* Message Block */
 .message{
+    padding: 24px 0 70px;
+
     display: inline-block;
     text-align: center;
+
     background: #ffffff;
     border: 1px solid rgba(19, 89, 120, 0.07);
     box-sizing: border-box;
     border-radius: 2px;
-    padding: 24px 0 70px;
     opacity: 0;
     visibility: hidden;
+
     transition: all 0.3s ease;
 }
 
 .message__close{
+    padding: 0 16px;
+    margin-bottom: 50px;
+
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-bottom: 50px;
-    padding: 0 16px;
 }
 
 .message__content{
@@ -390,20 +430,24 @@ input{
 }
 
 .message__info{
-    max-width: 280px;
-    color: #333333;
     margin: 29px 0 30px;
+
+    max-width: 280px;
+
+    color: #333333;
 }
 
 /* Header Block */
 .header{
     position: absolute;
     top: 0;
+
     width: 100%;
 }
 
 .header__bg{
     position: relative;
+
     width: 100%;
 }
 
@@ -415,16 +459,19 @@ input{
 
 .header__vector_left{
     left: 0;
+
     max-width: 25%;
 }
 
 .header__vector_right{
     right: 0;
+
     max-width: 14%;
 }
 
 .header__logo{
     position: relative;
+
     width: 100%;
 }
 
@@ -432,11 +479,14 @@ input{
     position: absolute;
     top: 60px;
     left: 50%;
-    transform: translateX( -50% );
+
     display: inline-block;
+
+    transform: translateX( -50% );
 }
 
 @media screen and ( max-width: 768px ){
+
     .header__vector_left{
         max-width: 32%;
     }
@@ -448,9 +498,11 @@ input{
     .header__link{
         top: 100px;
     }
+
 } 
 
 @media screen and ( max-width: 450px ){
+
     .header__vector_left{
         max-width: 45%;
     }
@@ -466,22 +518,27 @@ input{
     .logo{
         width: 128px;
     }
+
 } 
 
 /* Main Block */
 .main{
-    text-align: center;
     padding-top: 213px;
+
+    text-align: center;
 }
 
 .main__title{
-    color: #B4C2D9;
     margin-bottom: 8px;
+
+    color: #B4C2D9;
 }
 .main__description{
-    color: #333333;
+    margin: 0 auto;
+
     max-width: 423px;
-    margin: 0 auto
+
+    color: #333333;
 }
 
 .main__middle{
@@ -509,28 +566,35 @@ input{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate( -50%, -50% );
     z-index: 2;
+
     color: #ffffff;
+
+    transform: translate( -50%, -50% );
 }
 
 .time__bg{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate( -50%, -50% );
     z-index: 1;
+
     width: 100%;
     height: 100%;
+
+    transform: translate( -50%, -50% );
 }
 
 .main__bottom-text{
-    color: #333333;
-    max-width: 423px;
     margin: 0 auto 12px;
+
+    max-width: 423px;
+
+    color: #333333;
 }
 
 @media screen and ( max-width: 768px ) {
+
     .main{
         padding-top: 326px;
     }
@@ -559,16 +623,16 @@ input{
     
     .time__bg{
         transform: translate( -50%, -50% ) scaleY( 1.35 );
-        /* width: 64px;
-        height: 40px; */
     }
 
     .main__bottom-text{
         margin: 0 auto 15px;
     }
+
 }
 
 @media screen and ( max-width: 450px ) {
+
     .main{
         padding-top: 186px;
     }
@@ -576,6 +640,7 @@ input{
     .main__title{
         margin-bottom: 16px;
     }
+
 }
 
 
@@ -583,19 +648,23 @@ input{
 .footer{
     margin-top: 76px;
     padding: 61px 0 72px 0;
-    background: #162C4E;
+
     text-align: center;
+    background: #162C4E;
 }
 
 .subscribe{
     position: relative;
-    display: flex;
-    max-width: 440px;
+
     padding: 8px;
     margin: 0 auto;
+
+    display: flex;
+    max-width: 440px;
+
+    border-radius: 40px;
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.8);
-    border-radius: 40px;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
 }
 
@@ -603,20 +672,9 @@ input{
     position: absolute;
     top: -83%;
     left: 50%;
-    transform: translateX( -50% );
     z-index: 1;
-}
 
-.subscribe__errors::after{
-    content: '';
-    position: absolute;
-    top: 88%;
-    left: 50%;
-    transform: translateX( -50% ) rotate( 45deg );
-    z-index: 2;
-    background: #ffffff;
-    width: 10px;
-    height: 10px;
+    transform: translateX( -50% );
 }
 
 .subscribe__errors_hidden{
@@ -635,25 +693,42 @@ input{
     color: #DF2224
 }
 
+.error-message__text::after{
+    content: '';
+    position: absolute;
+    top: 88%;
+    left: 50%;
+    transform: translateX( -50% ) rotate( 45deg );
+    z-index: 2;
+    background: #ffffff;
+    width: 10px;
+    height: 10px;
+}
+
 .subscribe__input{
+    padding: 6px 0 6px 19px;
+
     width: 100%;
+    
+    border-radius: 40px;
+
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 150%;
-    padding: 6px 0 6px 19px;
-    border-radius: 40px;
 }
 
 .subscribe__submit{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #DF2224;
     width: 43px;
     height: 43px;
+
+    background: #DF2224;
     border-radius: 50px;
+    
     transition: all 0.3s ease;
 }
 
