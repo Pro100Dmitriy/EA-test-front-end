@@ -108,11 +108,11 @@ input{
         font-size: 16px;
     }
     
-    .time-st{
+    .time-style{
         font-size: 12px;
     }
 
-    .error-st{
+    .error-style{
         font-size: 16px;
     }
 }
@@ -120,6 +120,103 @@ input{
 /* --------------------- Font Style end */
 
 /* --------------------- Components begin */
+
+/* Loader Block Component */
+.loader{
+    box-sizing: border-box;
+}
+
+.loader__spiner{
+    position: relative;
+    display: block;
+    text-indent: -9999px;
+    width: 50px;
+    height: 50px;
+    border-top: 4px solid #ffffff;
+    border-right: 4px solid #ffffff;
+    border-bottom: 4px solid rgba(255, 255, 255, 0);
+    border-left: 4px solid rgba(255, 255, 255, 0);
+    border-radius: 50px;
+    -webkit-animation: animation-spiner 1.1s infinite linear;
+    animation: animation-spiner 1.1s infinite linear;
+}
+
+@-webkit-keyframes animation-spiner {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+}
+
+@keyframes animation-spiner{
+    0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    }
+    100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    }
+}
+
+.loader__spiner_dark{
+    border-top: 4px solid #333333;
+    border-right: 4px solid #333333;
+}
+
+/* Close button Block Component */
+.close-button{
+    box-sizing: border-box;
+}
+.close-button__cross{
+    position: relative;
+    display: block;
+    width: 24px;
+    height: 24px;
+    text-indent: -9999px;
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+.close-button__cross::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 33.94px;
+    height: 2px;
+    border-radius: 5px;
+    background: rgba(19, 89, 120, 0.5);
+    transition: all 0.3s ease;
+}
+.close-button__cross::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 33.94px;
+    height: 2px;
+    border-radius: 5px;
+    background: rgba(19, 89, 120, 0.5);
+    transition: all 0.3s ease;
+}
+.close-button__cross:hover::before{
+    transform: translate(-50%, -50%) rotate(0);
+}
+.close-button__cross:hover::after{
+    transform: translate(-50%, -50%) rotate(0);
+}
 
 .el-link-button{
     display: inline-flex;
@@ -136,8 +233,9 @@ input{
     border-radius: 40px;
     transition: all 0.3s ease;
 }
-.el-link-button img{
+.el-link-button__icon{
     margin-left: 34px;
+    fill: none;
 }
 .el-link-button:hover{
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
@@ -160,87 +258,6 @@ input{
 .el-button:hover{
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
 }
-
-.el-loader{
-    position: relative;
-    display: block;
-    text-indent: -9999px;
-    width: 50px;
-    height: 50px;
-    border-top: 4px solid #ffffff;
-    border-right: 4px solid #ffffff;
-    border-bottom: 4px solid rgba(255, 255, 255, 0);
-    border-left: 4px solid rgba(255, 255, 255, 0);
-    border-radius: 50px;
-    -webkit-animation: loader 1.1s infinite linear;
-    animation: loader 1.1s infinite linear;
-}
-@-webkit-keyframes loader {
-    0% {
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-}
-@keyframes loader{
-    0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-    }
-    100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-    }
-}
-
-.el-close{
-    position: relative;
-    display: block;
-    width: 24px;
-    height: 24px;
-    text-indent: -9999px;
-    background: none;
-    border: none;
-    margin: 0;
-    padding: 0;
-}
-.el-close::before{
-    content: '';
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 1;
-    transform: translate(-50%, -50%) rotate(45deg);
-    width: 33.94px;
-    height: 2px;
-    border-radius: 5px;
-    background: rgba(19, 89, 120, 0.5);
-    transition: all 0.3s ease;
-}
-.el-close::after{
-    content: '';
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 1;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    width: 33.94px;
-    height: 2px;
-    border-radius: 5px;
-    background: rgba(19, 89, 120, 0.5);
-    transition: all 0.3s ease;
-}
-.el-close:hover::before{
-    transform: translate(-50%, -50%) rotate(0);
-}
-.el-close:hover::after{
-    transform: translate(-50%, -50%) rotate(0);
-}
 /* --------------------- Components end */
 
 .container{
@@ -255,8 +272,8 @@ input{
     }
 }
 
-
-.page-load{
+/* Preloader Block */
+.preloader{
     position: fixed;
     top: 0;
     left: 0;
@@ -271,36 +288,23 @@ input{
     transition-timing-function: cubic-bezier(1,0,.52,1.01);
     transition: transform 1s ease;
 }
-.page-load .page-load__wrapper{
+
+.preloader__wrapper{
     position: relative;
     width: 100%;
     height: 100%;
 }
-.page-load .page-load__wrapper .page-load-loader{
+
+.preloader__loader{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate( -50%, -50% );
-    transition: all 0.4s ease
-}
-.page-load .page-load__wrapper .page-load-loader .el-loader{
-    border-top: 4px solid #333333;
-    border-right: 4px solid #333333;
+    transition: all 0.4s ease;
 }
 
-.popup-open{
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-.loader-open{
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-.message-open{
-    top: 50% !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
+
+/* Popup Block */
 .popup{
     position: fixed;
     top: 0;
@@ -313,12 +317,19 @@ input{
     visibility: hidden;
     transition: all 0.3s ease;
 }
-.popup .popup__wrapper{
+
+.popup_open{
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.popup__wrapper{
     position: relative;
     width: 100%;
     height: 100%;
 }
-.popup .popup__wrapper .message-loader{
+
+.popup__loader{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -328,12 +339,28 @@ input{
     visibility: hidden;
     transition: all 0.3s ease;
 }
-.popup .popup__wrapper .message{
+
+.popup__loader_open{
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.popup__message{
     position: absolute;
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
+}
+
+.popup__message_open{
+    top: 50% !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Message Block */
+.message{
     display: inline-block;
     text-align: center;
     background: #ffffff;
@@ -345,53 +372,63 @@ input{
     visibility: hidden;
     transition: all 0.3s ease;
 }
-.popup .popup__wrapper .message .message__close{
+
+.message__close{
     display: flex;
     justify-content: flex-end;
     align-items: center;
     margin-bottom: 50px;
     padding: 0 16px;
 }
-.popup .popup__wrapper .message .message__content{
+
+.message__content{
     padding: 0 20px
 }
-.popup .popup__wrapper .message .message__content h3{
+
+.message__title{
     color: #162C4E
 }
-.popup .popup__wrapper .message .message__content p{
+
+.message__info{
     max-width: 280px;
     color: #333333;
     margin: 29px 0 30px;
 }
 
-
+/* Header Block */
 .header{
     position: absolute;
     top: 0;
     width: 100%;
 }
-.header .header__bg{
+
+.header__bg{
     position: relative;
     width: 100%;
 }
-.header .header__bg .bg-vector{
+
+.header__vector{
     position: absolute;
     top: 0;
     z-index: -1;
 }
-.header .header__bg .bg-vector--left{
+
+.header__vector_left{
     left: 0;
     max-width: 25%;
 }
-.header .header__bg .bg-vector--right{
+
+.header__vector_right{
     right: 0;
     max-width: 14%;
 }
-.header .header__logo{
+
+.header__logo{
     position: relative;
     width: 100%;
 }
-.header .header__logo .logo-link{
+
+.header__link{
     position: absolute;
     top: 60px;
     left: 50%;
@@ -400,66 +437,75 @@ input{
 }
 
 @media screen and ( max-width: 768px ){
-    .header .header__bg .bg-vector--left{
+    .header__vector_left{
         max-width: 32%;
     }
-    .header .header__bg .bg-vector--right{
+
+    .header__vector_right{
         max-width: 30%;
     }
-    .header .header__logo .logo-link{
+
+    .header__link{
         top: 100px;
     }
 } 
 
 @media screen and ( max-width: 450px ){
-    .header .header__bg .bg-vector--left{
+    .header__vector_left{
         max-width: 45%;
     }
-    .header .header__bg .bg-vector--right{
+
+    .header__vector_right{
         max-width: 43%;
     }
-    .header .header__logo .logo-link{
+
+    .header__link{
         top: 80px;
     }
-    .header .header__logo .logo-link .logo{
+
+    .logo{
         width: 128px;
     }
 } 
 
-
+/* Main Block */
 .main{
     text-align: center;
     padding-top: 213px;
 }
 
-.main .main__wrapper .main__wrapper__top h1{
+.main__title{
     color: #B4C2D9;
     margin-bottom: 8px;
 }
-.main .main__wrapper .main__wrapper__top p{
+.main__description{
     color: #333333;
     max-width: 423px;
     margin: 0 auto
 }
 
-.main .main__wrapper .main__wrapper__middle{
+.main__middle{
     margin-top: 32px;
     margin-bottom: 72px;
 }
-.main .main__wrapper .main__wrapper__middle .timer{
+
+.timer{
     display: inline-flex;
     flex-direction: row;
     color: #162C4E;
 }
-.main .main__wrapper .main__wrapper__middle .timer .timer__item .time{
+
+.time__value{
     margin-bottom: 3px;
 }
-.main .main__wrapper .main__wrapper__middle .timer .timer__item .desc{
+
+.time__desc{
     position: relative;
     width: 132px;
     height: 54px;
 }
-.main .main__wrapper .main__wrapper__middle .timer .timer__item .desc .desc__name{
+
+.time__name{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -467,7 +513,8 @@ input{
     z-index: 2;
     color: #ffffff;
 }
-.main .main__wrapper .main__wrapper__middle .timer .timer__item .desc .desc__bg{
+
+.time__bg{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -477,7 +524,7 @@ input{
     height: 100%;
 }
 
-.main .main__wrapper .main__wrapper__bottom p{
+.main__bottom-text{
     color: #333333;
     max-width: 423px;
     margin: 0 auto 12px;
@@ -487,27 +534,36 @@ input{
     .main{
         padding-top: 326px;
     }
-    .main .main__wrapper .main__wrapper__top h1{
+    
+    .main__title{
         margin-bottom: 20px;
     }
-    .main .main__wrapper .main__wrapper__middle{
+
+    .main__middle{
         margin-top: 40px;
         margin-bottom: 40px;
     }
-    .main .main__wrapper .main__wrapper__middle .timer .timer__item{
+
+    .timer__item{
         margin-right: 6px;
     }
-    .main .main__wrapper .main__wrapper__middle .timer .timer__item:last-child{
+
+    .timer__item:last-child{
         margin-right: 0;
     }
-    .main .main__wrapper .main__wrapper__middle .timer .timer__item .desc{
+
+    .time__desc{
         width: 64px;
         height: 40px;
     }
-    .main .main__wrapper .main__wrapper__middle .timer .timer__item .desc .desc__bg{
-        transform: translate( -50%, -50% ) scaleY( 1.35 )
+    
+    .time__bg{
+        transform: translate( -50%, -50% ) scaleY( 1.35 );
+        /* width: 64px;
+        height: 40px; */
     }
-    .main .main__wrapper .main__wrapper__bottom p{
+
+    .main__bottom-text{
         margin: 0 auto 15px;
     }
 }
@@ -516,13 +572,14 @@ input{
     .main{
         padding-top: 186px;
     }
-    .main .main__wrapper .main__wrapper__top h1{
+
+    .main__title{
         margin-bottom: 16px;
     }
 }
 
 
-
+/* Footer Block */
 .footer{
     margin-top: 76px;
     padding: 61px 0 72px 0;
@@ -530,7 +587,7 @@ input{
     text-align: center;
 }
 
-.footer .footer__wrapper .subscribe{
+.subscribe{
     position: relative;
     display: flex;
     max-width: 440px;
@@ -541,22 +598,16 @@ input{
     border-radius: 40px;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
 }
-.footer .footer__wrapper .subscribe .err-hidden{
-    opacity: 0;
-    visibility: hidden;
-}
-.footer .footer__wrapper .subscribe .subscribe__errors{
+
+.subscribe__errors{
     position: absolute;
     top: -83%;
     left: 50%;
     transform: translateX( -50% );
     z-index: 1;
-    background: #ffffff;
-    padding: 5px 20px;
-    border-radius: 10px;
-    transition: all 0.3s ease;
 }
-.footer .footer__wrapper .subscribe .subscribe__errors::after{
+
+.subscribe__errors::after{
     content: '';
     position: absolute;
     top: 88%;
@@ -567,10 +618,24 @@ input{
     width: 10px;
     height: 10px;
 }
-.footer .footer__wrapper .subscribe .subscribe__errors span{
+
+.subscribe__errors_hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.error-message{
+    background: #ffffff;
+    padding: 5px 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.error-message__text{
     color: #DF2224
 }
-.footer .footer__wrapper .subscribe .subscribe__input{
+
+.subscribe__input{
     width: 100%;
     font-family: 'Roboto';
     font-style: normal;
@@ -580,7 +645,8 @@ input{
     padding: 6px 0 6px 19px;
     border-radius: 40px;
 }
-.footer .footer__wrapper .subscribe .subscribe__submit{
+
+.subscribe__submit{
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -590,35 +656,46 @@ input{
     border-radius: 50px;
     transition: all 0.3s ease;
 }
-.footer .footer__wrapper .subscribe .subscribe__submit:disabled{
+
+.subscribe__submit:disabled{
     background: #c7c7c7;
     -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
     -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
 }
-.footer .footer__wrapper .subscribe .subscribe__submit:hover{
+
+.subscribe__submit:hover{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.subscribe__button-icon{
+    fill: none
 }
 
 @media screen and ( max-width: 768px ) {
     .footer{
         margin-top: 169px;
     }
-    .footer .footer__wrapper .subscribe{
+
+    .subscribe{
         max-width: 360px;
         padding: 4px;
     }
-    .footer .footer__wrapper .subscribe .subscribe__errors{
+
+    .subscribe__errors{
         top: -130%;
     }
-    .footer .footer__wrapper .subscribe .subscribe__input{
+    
+    .subscribe__input{
         font-size: 14px;
     }
-    .footer .footer__wrapper .subscribe .subscribe__submit{
+
+    .subscribe__submit{
         width: 33px;
         height: 33px;
     }
-    .footer .footer__wrapper .subscribe .subscribe__submit img{
+
+    .subscribe__button-icon{
         width: 15.35px;
         height: 15.35px;
     }

@@ -38,9 +38,9 @@ class Timer{
     }
 
     days(){
-        const daysWrap = this.wrapper.querySelector('#days')
-        const daysValue = daysWrap.querySelector('.time-value')
-        const daysName = daysWrap.querySelector('.time-name')
+        const daysWrap = this.wrapper.querySelector('#js-days')
+        const daysValue = daysWrap.querySelector('.js-time__value')
+        const daysName = daysWrap.querySelector('.js-time__name')
 
         let floor = Math.floor( this.gap / 1000 / 60 / 60 / 24 )
         let value = floor < 10 ? `0${floor}` : floor
@@ -51,9 +51,9 @@ class Timer{
     }
 
     hours(){
-        const hoursWrap = this.wrapper.querySelector('#hours')
-        const hoursValue = hoursWrap.querySelector('.time-value')
-        const hoursName = hoursWrap.querySelector('.time-name')
+        const hoursWrap = this.wrapper.querySelector('#js-hours')
+        const hoursValue = hoursWrap.querySelector('.js-time__value')
+        const hoursName = hoursWrap.querySelector('.js-time__name')
 
         let floor = Math.floor( (this.gap / 1000 / 60 / 60) % 24 )
         let value = floor < 10 ? `0${floor}` : floor
@@ -64,9 +64,9 @@ class Timer{
     }
 
     minutes(){
-        const minutesWrap = this.wrapper.querySelector('#minutes')
-        const minutesValue = minutesWrap.querySelector('.time-value')
-        const minutesName = minutesWrap.querySelector('.time-name')
+        const minutesWrap = this.wrapper.querySelector('#js-minutes')
+        const minutesValue = minutesWrap.querySelector('.js-time__value')
+        const minutesName = minutesWrap.querySelector('.js-time__name')
 
         let floor = Math.floor( (this.gap / 1000 / 60) % 60 )
         let name = floor < 10 ? `0${floor}` : floor
@@ -77,9 +77,9 @@ class Timer{
     }
 
     seconds(){
-        const secondsWrap = this.wrapper.querySelector('#seconds')
-        const secondsValue = secondsWrap.querySelector('.time-value')
-        const secondsName = secondsWrap.querySelector('.time-name')
+        const secondsWrap = this.wrapper.querySelector('#js-seconds')
+        const secondsValue = secondsWrap.querySelector('.js-time__value')
+        const secondsName = secondsWrap.querySelector('.js-time__name')
 
         let floor = Math.floor( (this.gap / 1000) % 60 )
         let value = floor < 10 ? `0${floor}` : floor

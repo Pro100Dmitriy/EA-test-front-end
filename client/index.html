@@ -4,47 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
     <title>EA Test Front-End - Shestak D.A.</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
     <link rel="stylesheet" href="./assets/styles/style.css">
 </head>
 <body>
 
-    <div id="page-load" class="page-load load-hidden">
-        <div class="page-load__wrapper">
-            <div class="page-load-loader">
-                <span class="el-loader">loading...</span>
+    <div class="preloader preloader_hidden" id="js-preloader">
+        <div class="preloader__wrapper">
+            <div class="loader preloader__loader">
+                <span class="loader__spiner loader__spiner_dark js-loader__spiner">loading...</span>
             </div>
         </div>
     </div>
 
-    <div id="popup" class="popup">
+    <div class="popup js-popup">
         <div class="popup__wrapper">
-            <div id="loader" class="message-loader">
-                <span class="el-loader">loading...</span>
+            <div class="loader popup__loader js-popup__loader">
+                <span class="loader__spiner">loading...</span>
             </div>
-            <div id="message" class="message">
-                <div class="message__close">
-                    <button id="close-popup" class="el-close">Close</button>
+            <div class="message popup__message js-popup__message">
+                <div class="close-button message__close">
+                    <button class="close-button__cross js-close-popup">Close</button>
                 </div>
                 <div class="message__content">
-                    <h3 id="message-title" class="h3">Success!</h3>
-                    <p id="message-info" class="message-st">You have successfully subscribed to the email newsletter.</p>
-                    <button id="close-popup" class="el-button">Close</button>
+                    <h3 class="message__title js-message__title h3">Success!</h3>
+                    <p class="message__info js-message__info">You have successfully subscribed to the email newsletter.</p>
+                    <button class="el-button message__button js-close-popup">Close</button>
                 </div>
             </div>
         </div>
     </div>
     
-
     <header class="header">
         <div class="header__bg">
-            <img class="bg-vector bg-vector--left" src="./assets/img/Bg-left-vector.svg" alt="Logo">
-            <img class="bg-vector bg-vector--right" src="./assets/img/Bg-right-vector.svg" alt="Logo">
+            <img class="header__vector header__vector_left" src="./assets/images/Bg-left-vector.svg" alt="Background form">
+            <img class="header__vector header__vector_right" src="./assets/images/Bg-right-vector.svg" alt="Background form">
         </div>
         <div class="header__logo">
-            <a class="logo-link" href="/">
-                <img class="logo" src="./assets/img/Logo.svg" alt="Logo">
+            <a class="header__link" href="javascript:void(0);">
+                <svg class="logo" width="191" height="60" fill="currentColor" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M25.637 46.416c.885-5.25 4.916-8.581 11.026-8.581H52.54c5.925 0 7.184-3.882 7.184-3.882-.885 5.25-3.295 8.581-9.405 8.581H34.033c-6.74 0-8.396 3.882-8.396 3.882Z" fill="#DF2325"/><path d="M52.266 43.536c-1.348 2.021-2.91 2.199-5.872 2.199-2.963 0-6.442.065-11.257 0-5.184-.071-9.186 2.264-9.512 7.343 1.348-2.021 3.1-2.389 6.062-2.389 2.963 0 4.744-.065 9.56 0 5.177.078 9.226-2.204 11.02-7.153Z" fill="#EE4523"/><path d="M25.637 57.292c0-2.021 2.772-3.106 6.085-3.106s9.726.439 12.451-1.481C43.431 54.92 36.663 60 29.9 60c-3.064 0-4.263-1.476-4.263-2.708Z" fill="#FE5F3E"/><path d="M13.609 25.591c5.26.883 8.597 4.907 8.597 11.006v15.847c0 5.915 3.89 7.171 3.89 7.171-5.262-.883-8.598-3.289-8.598-9.387V33.97c0-6.732-3.89-8.38-3.89-8.38Z" fill="#172C4F"/><path d="M16.493 52.165c-2.025-1.345-2.203-2.904-2.203-5.861 0-2.958-.065-6.43 0-11.237.071-5.174-2.268-9.168-7.357-9.494 2.025 1.345 2.393 3.094 2.393 6.05 0 2.958.065 4.736 0 9.543-.071 5.173 2.209 9.21 7.167 11Z" fill="#264A74"/><path d="M2.72 25.593c2.024 0 3.11 2.767 3.11 6.074 0 3.301-.439 9.708 1.485 12.428C5.088 43.355 0 36.598 0 29.842c0-3.058 1.484-4.25 2.72-4.25Z" fill="#345A87"/><path d="M34.48 13.584c-.884 5.25-4.916 8.581-11.026 8.581H7.572c-5.926 0-7.185 3.882-7.185 3.882.885-5.25 3.296-8.582 9.405-8.582H26.08c6.745 0 8.401-3.881 8.401-3.881Z" fill="#DF2325"/><path d="M7.85 16.464c1.348-2.021 2.91-2.199 5.873-2.199 2.962 0 6.442-.065 11.257 0 5.183.071 9.185-2.264 9.512-7.343-1.348 2.021-3.1 2.389-6.062 2.389-2.963 0-4.744.065-9.56 0-5.177-.077-9.227 2.204-11.02 7.153Z" fill="#EE4523"/><path d="M34.481 2.708c0 2.021-2.773 3.106-6.086 3.106s-9.725-.439-12.45 1.482C16.685 5.079 23.454 0 30.217 0c3.064 0 4.263 1.476 4.263 2.708Z" fill="#FE5F3E"/><path d="M46.508 34.41c-5.26-.884-8.597-4.908-8.597-11.006V7.556c0-5.914-3.89-7.17-3.89-7.17 5.261.882 8.598 3.288 8.598 9.387v16.256c0 6.733 3.89 8.38 3.89 8.38Z" fill="#172C4F"/><path d="M43.623 7.835c2.024 1.345 2.202 2.904 2.202 5.861 0 2.958.066 6.43 0 11.237-.07 5.174 2.268 9.168 7.357 9.494-2.025-1.345-2.393-3.093-2.393-6.05 0-2.958-.065-4.736 0-9.542.071-5.174-2.209-9.21-7.166-11Z" fill="#264A74"/><path d="M57.397 34.41c-2.025 0-3.111-2.768-3.111-6.075 0-3.301.439-9.708-1.485-12.428 2.22.74 7.31 7.497 7.31 14.247.005 3.064-1.48 4.255-2.714 4.255Z" fill="#345A87"/><path d="M84.485 6.442v27.102h10.67v6.276H76.338V6.442h8.146ZM119.547 12.955h-12.339v6.75h10.908v6.277h-10.908v7.325h12.339v6.513H99.062V6.442h20.485v6.513ZM145.655 33.923h-12.481l-2.001 5.897h-8.526l12.101-33.378h9.434l12.101 33.378h-8.621l-2.007-5.897Zm-6.241-18.496-4.096 12.22h8.241l-4.145-12.22ZM190.001 23.131c0 9.892-6.857 16.69-17.527 16.69h-12.528V6.441h12.528c10.67 0 17.527 6.75 17.527 16.69Zm-18.056 9.649c6.146 0 9.768-3.52 9.768-9.655 0-6.134-3.622-9.749-9.768-9.749h-3.859v19.398h3.859v.006ZM115.467 51.816h-3.414l-.588 1.665h-1.395l2.921-8.149h1.55l2.921 8.149h-1.407l-.588-1.665Zm-1.704-4.872-1.336 3.781h2.666l-1.33-3.781ZM128.935 48.99c0 2.508-1.716 4.043-4.329 4.043h-2.666v-8.138h2.666c2.613-.005 4.329 1.577 4.329 4.096Zm-4.329 2.952c1.924 0 2.957-1.102 2.957-2.951 0-1.861-1.033-3.01-2.957-3.01h-1.324v5.961h1.324ZM138.755 45.338h1.407l-3.063 8.137h-1.55l-3.076-8.137h1.431l2.417 6.768 2.434-6.768ZM144.538 45.338h1.336v8.137h-1.336v-8.137ZM153.687 53.558c-1.633 0-2.886-.889-2.886-2.329h1.431c.06.67.529 1.21 1.455 1.21.938 0 1.466-.505 1.466-1.198 0-1.968-4.328-.693-4.328-3.692 0-1.428 1.14-2.318 2.802-2.318 1.562 0 2.666.818 2.779 2.217h-1.478c-.048-.551-.529-1.055-1.372-1.079-.772-.023-1.371.35-1.371 1.138 0 1.837 4.316.694 4.316 3.669 0 1.215-.997 2.382-2.814 2.382ZM165.047 53.558c-2.298 0-4.168-1.719-4.168-4.172 0-2.436 1.864-4.16 4.168-4.16 2.322 0 4.168 1.718 4.168 4.16 0 2.453-1.841 4.172-4.168 4.172Zm0-1.156c1.621 0 2.791-1.173 2.791-3.01 0-1.838-1.176-2.988-2.791-2.988-1.621 0-2.791 1.15-2.791 2.987 0 1.838 1.176 3.011 2.791 3.011ZM176.784 45.338c1.936 0 2.886 1.114 2.886 2.436 0 .96-.517 1.991-1.888 2.329l2.018 3.372h-1.597l-1.876-3.254h-1.021v3.254h-1.336v-8.137h2.814Zm0 1.09h-1.478v2.727h1.478c1.045 0 1.514-.575 1.514-1.381 0-.818-.469-1.346-1.514-1.346ZM187.187 53.558c-1.633 0-2.886-.889-2.886-2.329h1.431c.06.67.529 1.21 1.455 1.21.938 0 1.466-.505 1.466-1.198 0-1.968-4.328-.693-4.328-3.692 0-1.428 1.14-2.318 2.803-2.318 1.561 0 2.665.818 2.778 2.217h-1.478c-.048-.551-.529-1.055-1.372-1.079-.772-.023-1.371.35-1.371 1.138 0 1.837 4.316.694 4.316 3.669 0 1.215-.997 2.382-2.814 2.382Z" fill="#172C4F"/></svg>
             </a>
         </div>
     </header>
@@ -52,54 +51,69 @@
     <section class="main">
         <div class="container">
             <div class="main__wrapper">
-                <div class="main__wrapper__top">
-                    <h1 class="h1">under construction</h1>
-                    <p class="regular">We're making lots of improvements and will be back soon</p>
+                <div class="main__top">
+                    <h1 class="main__title h1">under construction</h1>
+                    <p class="main__description regular">We're making lots of improvements and will be back soon</p>
                 </div>
-                <div class="main__wrapper__middle">
-                    <div id="timer" class="timer">
-                        <div id="days" class="timer__item">
-                            <span class="time-value h2">00</span>
-                            <div class="desc">
-                                <p class="time-name time-st desc__name">Days</p>
-                                <img class="desc__bg" src="./assets/img/Timer-bg.svg" alt="Timer vector">
+                <div class="main__middle">
+                    <div class="timer" id="js-timer">
+
+                        <div class="time timer__item" id="js-days">
+                            <span class="time__value js-time__value h2">00</span>
+                            <div class="time__desc">
+                                <p class="time__name js-time__name time-style">Days</p>
+                                <img class="time__bg" src="./assets/images/Timer-bg.svg" alt="Time bg">
+                                <!-- <svg class="time__bg" fill="currentColor" aria-hidden="true" width="132" height="54" xmlns="http://www.w3.org/2000/svg"><path d="M0 54c6.678-11.437 14.415-12.443 29.095-12.443s31.919-.37 55.777 0C110.554 41.959 130.382 28.744 132 0c-6.678 11.437-15.356 13.517-30.036 13.517-14.68 0-23.505.369-47.364 0C28.918 13.114 8.884 25.994 0 54Z" fill="#DF2224"/></svg> -->
                             </div>
                         </div>
+
                         <div class="timer__item">
                             <span class="h2 devider">:</span>
                         </div>
-                        <div id="hours" class="timer__item">
-                            <span class="time-value h2 time">00</span>
-                            <div class="desc">
-                                <p class="time-name time-st desc__name">Hours</p>
-                                <img class="desc__bg" src="./assets/img/Timer-bg.svg" alt="Timer vector">
+
+                        <div class="time timer__item" id="js-hours">
+                            <span class="time__value js-time__value h2">00</span>
+                            <div class="time__desc">
+                                <p class="time__name js-time__name time-style">Hours</p>
+                                <img class="time__bg" src="./assets/images/Timer-bg.svg" alt="Time bg">
+                                <!-- <svg class="time__bg" fill="currentColor" aria-hidden="true" width="132" height="54" xmlns="http://www.w3.org/2000/svg"><path d="M0 54c6.678-11.437 14.415-12.443 29.095-12.443s31.919-.37 55.777 0C110.554 41.959 130.382 28.744 132 0c-6.678 11.437-15.356 13.517-30.036 13.517-14.68 0-23.505.369-47.364 0C28.918 13.114 8.884 25.994 0 54Z" fill="#DF2224"/></svg> -->
                             </div>
                         </div>
+
                         <div class="timer__item">
                             <span class="h2 devider">:</span>
                         </div>
-                        <div id="minutes" class="timer__item">
-                            <span class="time-value h2 time">00</span>
-                            <div class="desc">
-                                <p class="time-name time-st desc__name">Minutes</p>
-                                <img class="desc__bg" src="./assets/img/Timer-bg.svg" alt="Timer vector">
+
+                        <div class="time timer__item" id="js-minutes">
+                            <span class="time__value js-time__value h2">00</span>
+                            <div class="time__desc">
+                                <p class="time__name js-time__name time-style">Minutes</p>
+                                <img class="time__bg" src="./assets/images/Timer-bg.svg" alt="Time bg">
+                                <!-- <svg class="time__bg" fill="currentColor" aria-hidden="true" width="132" height="54" xmlns="http://www.w3.org/2000/svg"><path d="M0 54c6.678-11.437 14.415-12.443 29.095-12.443s31.919-.37 55.777 0C110.554 41.959 130.382 28.744 132 0c-6.678 11.437-15.356 13.517-30.036 13.517-14.68 0-23.505.369-47.364 0C28.918 13.114 8.884 25.994 0 54Z" fill="#DF2224"/></svg> -->
                             </div>
                         </div>
+
                         <div class="timer__item">
                             <span class="h2 devider">:</span>
                         </div>
-                        <div id="seconds" class="timer__item">
-                            <span class="time-value h2 time">00</span>
-                            <div class="desc">
-                                <p class="time-name time-st desc__name">Seconds</p>
-                                <img class="desc__bg" src="./assets/img/Timer-bg.svg" alt="Timer vector">
+
+                        <div class="time timer__item" id="js-seconds">
+                            <span class="time__value js-time__value h2 time">00</span>
+                            <div class="time__desc">
+                                <p class="time__name js-time__name time-style">Seconds</p>
+                                <img class="time__bg" src="./assets/images/Timer-bg.svg" alt="Time bg">
+                                <!-- <svg class="time__bg" fill="currentColor" aria-hidden="true" width="132" height="54" xmlns="http://www.w3.org/2000/svg"><path d="M0 54c6.678-11.437 14.415-12.443 29.095-12.443s31.919-.37 55.777 0C110.554 41.959 130.382 28.744 132 0c-6.678 11.437-15.356 13.517-30.036 13.517-14.68 0-23.505.369-47.364 0C28.918 13.114 8.884 25.994 0 54Z" fill="#DF2224"/></svg> -->
                             </div>
                         </div>
+
                     </div>
                 </div>
-                <div class="main__wrapper__bottom">
-                    <p class="regular">Check our event page when you wait:</p>
-                    <a href="https://github.com/Pro100Dmitriy/EA-test-front-end" class="el-link-button">Go to the event<img src="./assets/img/Arrow-right.svg" alt="Arrow right"/></a>
+                <div class="main__bottom">
+                    <p class="main__bottom-text regular">Check our event page when you wait:</p>
+                    <a class="el-link-button" href="https://github.com/Pro100Dmitriy/EA-test-front-end" target="_blank" rel="nofollow">
+                        Go to the event
+                        <svg class="el-link-button__icon" fill="currentColor" aria-hidden="true" width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M4.167 10h11.666M10 4.167 15.833 10 10 15.833" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
                 </div>
             </div>
         </div>
@@ -108,12 +122,14 @@
     <footer class="footer">
         <div class="container">
             <div class="footer__wrapper">
-                <form id="subscribe" class="subscribe">
-                    <div class="subscribe__errors err-hidden">
-                        <span class="error-st">This is not an email</span>
+                <form class="subscribe js-subscribe" name="subscribe" method="post">
+                    <div class="error-message subscribe__errors js-subscribe__errors subscribe__errors_hidden">
+                        <span class="error-message__text error-style">This is not an email</span>
                     </div>
-                    <input type="email" class="subscribe__input" placeholder="Enter your Email and get notified">
-                    <button type="submit" class="subscribe__submit"><img src="./assets/img/Arrow-right.svg" alt="Arrow right"></button>
+                    <input class="subscribe__input js-subscribe__input" type="email" name="email" placeholder="Enter your Email and get notified">
+                    <button class="subscribe__submit js-subscribe__submit" type="submit" name="submit">
+                        <svg class="subscribe__button-icon" fill="currentColor" aria-hidden="true" width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M4.167 10h11.666M10 4.167 15.833 10 10 15.833" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
                 </form>
             </div>
         </div>
@@ -121,6 +137,7 @@
 
 
     <script src="./assets/js/utils.js"></script>
+    <script src="./assets/js/modules.js"></script>
     <script src="./assets/js/timer.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
