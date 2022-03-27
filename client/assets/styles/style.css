@@ -1,40 +1,38 @@
 /* --------------------- Reset begin */
-body{
+body {
     padding: 0;
     margin: 0;
 }
 
-p{
+p {
     margin: 0;
     padding: 0;
 }
 
-h1{
+h1 {
     margin: 0;
     padding: 0;
 }
 
-a{
+a {
     margin: 0;
     padding: 0;
     text-decoration: none;
 }
 
-button{
+button {
     border: none;
     outline: none;
 }
 
-input{
+input {
     border: none;
     outline: none;
 }
-
 /* --------------------- Reset end */
 
 /* --------------------- Font Style begin */
-
-.h1{
+.h1 {
     text-transform: uppercase;
     font-family: 'Poppins';
     font-style: normal;
@@ -43,7 +41,7 @@ input{
     line-height: 104%;
 }
 
-.h2{
+.h2 {
     text-transform: uppercase;
     font-family: 'Poppins';
     font-style: normal;
@@ -52,7 +50,7 @@ input{
     line-height: 100%;
 }
 
-.h3{
+.h3 {
     text-transform: uppercase;
     font-family: 'Poppins';
     font-style: normal;
@@ -61,7 +59,7 @@ input{
     line-height: 104%;
 }
 
-.regular{
+.regular {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -69,7 +67,7 @@ input{
     line-height: 150%;
 }
 
-.time-style{
+.time-style {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -77,7 +75,7 @@ input{
     line-height: 100%;
 }
 
-.message-st{
+.message-st {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -85,7 +83,7 @@ input{
     line-height: 150%;
 }
 
-.error-style{
+.error-style {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -94,37 +92,33 @@ input{
 }
 
 @media screen and ( max-width: 768px ) {
-    .h1{
+    .h1 {
         font-size: 36px;
     }
 
-    .h2{
+    .h2 {
         font-size: 36px;
     }
     
-    .regular{
+    .regular {
         font-size: 16px;
     }
     
-    .time-style{
+    .time-style {
         font-size: 12px;
     }
 
-    .error-style{
+    .error-style {
         font-size: 16px;
     }
 }
-
 /* --------------------- Font Style end */
 
 /* --------------------- Components begin */
-
-/* Loader Block Component */
-.loader{
+.loader {
     box-sizing: border-box;
 }
-
-.loader__spiner{
+.loader__spiner {
     position: relative;
     
     text-indent: -9999px;
@@ -141,7 +135,10 @@ input{
     -webkit-animation: animation-spiner 1.1s infinite linear;
     animation: animation-spiner 1.1s infinite linear;
 }
-
+.loader__spiner_dark {
+    border-top: 4px solid #333333;
+    border-right: 4px solid #333333;
+}
 @-webkit-keyframes animation-spiner {
     0% {
       -webkit-transform: rotate(0deg);
@@ -152,7 +149,6 @@ input{
       transform: rotate(360deg);
     }
 }
-
 @keyframes animation-spiner{
     0% {
         -webkit-transform: rotate(0deg);
@@ -164,17 +160,10 @@ input{
     }
 }
 
-.loader__spiner_dark{
-    border-top: 4px solid #333333;
-    border-right: 4px solid #333333;
-}
-
-/* Close button Block Component */
-.close-button{
+.close-button {
     box-sizing: border-box;
 }
-
-.close-button__cross{
+.close-button__cross {
     position: relative;
 
     margin: 0;
@@ -188,8 +177,7 @@ input{
     background: none;
     border: none;
 }
-
-.close-button__cross::before{
+.close-button__cross::before {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -204,10 +192,9 @@ input{
     background: rgba(19, 89, 120, .5);
 
     transform: translate(-50%, -50%) rotate(45deg);
-    transition: all 0.3s ease;
+    transition: all .3s ease;
 }
-
-.close-button__cross::after{
+.close-button__cross::after {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -222,18 +209,16 @@ input{
     background: rgba(19, 89, 120, .5);
 
     transform: translate(-50%, -50%) rotate(-45deg);
-    transition: all 0.3s ease;
+    transition: all .3s ease;
 }
-
-.close-button__cross:hover::before{
+.close-button__cross:hover::before {
+    transform: translate(-50%, -50%) rotate(0);
+}
+.close-button__cross:hover::after {
     transform: translate(-50%, -50%) rotate(0);
 }
 
-.close-button__cross:hover::after{
-    transform: translate(-50%, -50%) rotate(0);
-}
-
-.el-link-button{
+.el-link-button {
     padding: 16px 28px;
 
     display: inline-flex;
@@ -250,19 +235,18 @@ input{
     font-size: 18px;
     line-height: 150%;
 
-    transition: all 0.3s ease;
+    transition: all .3s ease;
 }
-
-.el-link-button__icon{
+.el-link-button__icon {
     margin-left: 34px;
+    stroke: #fff;
     fill: none;
 }
-
-.el-link-button:hover{
+.el-link-button:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, .4);
 }
 
-.el-button{
+.el-button {
     padding: 16px 74px;
 
     display: inline-flex;
@@ -278,27 +262,27 @@ input{
     font-size: 18px;
     line-height: 150%;
     
-    transition: all 0.3s ease;
+    transition: all .3s ease;
 }
-.el-button:hover{
+.el-button:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, .4);
 }
 /* --------------------- Components end */
 
-.container{
+.container {
     max-width: 1560px;
     margin: 0 auto;
 }
 
 @media screen and ( max-width: 480px ){
-    .container{
+    .container {
         padding-left: 20px;
         padding-right: 20px;
     }
 }
 
 /* Preloader Block */
-.preloader{
+.preloader {
     position: fixed;
     top: 0;
     left: 0;
@@ -316,14 +300,12 @@ input{
     transition-timing-function: cubic-bezier(1,0,.52,1.01);
     transition: transform 1s ease;
 }
-
-.preloader__wrapper{
+.preloader__wrapper {
     position: relative;
     width: 100%;
     height: 100%;
 }
-
-.preloader__loader{
+.preloader__loader {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -333,7 +315,7 @@ input{
 
 
 /* Popup Block */
-.popup{
+.popup {
     position: fixed;
     top: 0;
     left: 0;
@@ -342,26 +324,23 @@ input{
     width: 100%;
     height: 100%;
 
-    background: rgba(19,89, 120, 0.6);
+    background: rgba(19,89, 120, .6);
     opacity: 0;
     visibility: hidden;
 
     transition: all .3s ease;
 }
-
-.popup_open{
+.popup_open {
     opacity: 1 !important;
     visibility: visible !important;
 }
-
-.popup__wrapper{
+.popup__wrapper {
     position: relative;
 
     width: 100%;
     height: 100%;
 }
-
-.popup__loader{
+.popup__loader {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -371,15 +350,13 @@ input{
     visibility: hidden;
 
     transform: translate(-50%, -50%);
-    transition: all 0.3s ease;
+    transition: all .3s ease;
 }
-
-.popup__loader_open{
+.popup__loader_open {
     opacity: 1 !important;
     visibility: visible !important;
 }
-
-.popup__message{
+.popup__message {
     position: absolute;
     top: 60%;
     left: 50%;
@@ -387,8 +364,7 @@ input{
 
     transform: translate(-50%, -50%);
 }
-
-.popup__message_open{
+.popup__message_open {
     top: 50% !important;
 
     opacity: 1 !important;
@@ -396,23 +372,22 @@ input{
 }
 
 /* Message Block */
-.message{
+.message {
     padding: 24px 0 70px;
 
     display: inline-block;
     text-align: center;
 
     background: #ffffff;
-    border: 1px solid rgba(19, 89, 120, 0.07);
+    border: 1px solid rgba(19, 89, 120, .07);
     box-sizing: border-box;
     border-radius: 2px;
     opacity: 0;
     visibility: hidden;
 
-    transition: all 0.3s ease;
+    transition: all .3s ease;
 }
-
-.message__close{
+.message__close {
     padding: 0 16px;
     margin-bottom: 50px;
 
@@ -420,16 +395,13 @@ input{
     justify-content: flex-end;
     align-items: center;
 }
-
-.message__content{
+.message__content {
     padding: 0 20px
 }
-
-.message__title{
+.message__title {
     color: #162C4E
 }
-
-.message__info{
+.message__info {
     margin: 29px 0 30px;
 
     max-width: 280px;
@@ -438,45 +410,39 @@ input{
 }
 
 /* Header Block */
-.header{
+.header {
     position: absolute;
     top: 0;
 
     width: 100%;
 }
-
-.header__bg{
+.header__bg {
     position: relative;
 
     width: 100%;
 }
-
-.header__vector{
+.header__vector {
     position: absolute;
     top: 0;
     z-index: -1;
 }
-
-.header__vector_left{
+.header__vector_left {
     left: 0;
 
     max-width: 25%;
 }
-
-.header__vector_right{
+.header__vector_right {
     right: 0;
 
     max-width: 14%;
 }
-
-.header__logo{
+.header__logo {
     position: relative;
 
     width: 100%;
     height: auto;
 }
-
-.header__link{
+.header__link {
     position: absolute;
     top: 60px;
     left: 50%;
@@ -487,84 +453,77 @@ input{
 }
 
 @media screen and ( max-width: 768px ){
-
-    .header__vector_left{
+    .header__vector_left {
         max-width: 32%;
     }
-
-    .header__vector_right{
+    .header__vector_right {
         max-width: 30%;
     }
-
-    .header__link{
+    .header__link {
         top: 100px;
     }
-
 } 
 
 @media screen and ( max-width: 450px ){
-
-    .header__vector_left{
+    .header__vector_left {
         max-width: 45%;
     }
-
-    .header__vector_right{
+    .header__vector_right {
         max-width: 43%;
     }
-
-    .header__link{
+    .header__link {
         top: 80px;
     }
-
-    .logo{
+    .logo {
         width: 128px;
         height: auto;
     }
-
 } 
 
 /* Main Block */
-.main{
+.main {
     padding-top: 213px;
 
     text-align: center;
 }
-
-.main__title{
+.main__title {
     margin-bottom: 8px;
 
     color: #B4C2D9;
 }
-.main__description{
+.main__description {
     margin: 0 auto;
 
     max-width: 423px;
 
     color: #333333;
 }
-
-.main__middle{
+.main__middle {
     margin-top: 32px;
     margin-bottom: 72px;
 }
+.main__bottom-text {
+    margin: 0 auto 12px;
 
-.timer{
+    max-width: 423px;
+
+    color: #333333;
+}
+
+.timer {
     display: inline-flex;
     flex-direction: row;
     color: #162C4E;
 }
-
-.time__value{
+.time__value {
     margin-bottom: 3px;
 }
-
-.time__desc{
+.time__desc {
     position: relative;
     width: 132px;
     height: 54px;
 }
-
-.time__name{
+.time__name {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -574,8 +533,7 @@ input{
 
     transform: translate( -50%, -50% );
 }
-
-.time__bg{
+.time__bg {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -584,70 +542,53 @@ input{
     width: 100%;
     height: 100%;
 
+    fill: #DF2224;
+
     transform: translate( -50%, -50% );
 }
 
-.main__bottom-text{
-    margin: 0 auto 12px;
-
-    max-width: 423px;
-
-    color: #333333;
-}
-
 @media screen and ( max-width: 768px ) {
-
-    .main{
+    .main {
         padding-top: 326px;
     }
-    
-    .main__title{
+    .main__title {
         margin-bottom: 20px;
     }
-
-    .main__middle{
+    .main__middle {
         margin-top: 40px;
         margin-bottom: 40px;
     }
-
-    .timer__item{
-        margin-right: 6px;
-    }
-
-    .timer__item:last-child{
-        margin-right: 0;
-    }
-
-    .time__desc{
-        width: 64px;
-        height: 40px;
-    }
-    
-    .time__bg{
-        transform: translate( -50%, -50% ) scaleY( 1.35 );
-    }
-
-    .main__bottom-text{
+    .main__bottom-text {
         margin: 0 auto 15px;
     }
 
+    .timer__item {
+        margin-right: 6px;
+    }
+    .timer__item:last-child {
+        margin-right: 0;
+    }
+    .time__desc {
+        width: 64px;
+        height: 40px;
+    }
+    .time__bg {
+        transform: translate( -50%, -50% ) scaleY( 1.35 );
+    }
 }
 
 @media screen and ( max-width: 450px ) {
-
-    .main{
+    .main {
         padding-top: 186px;
     }
-
-    .main__title{
+    .main__title {
         margin-bottom: 16px;
     }
-
 }
 
 
 /* Footer Block */
-.footer{
+.footer {
     margin-top: 76px;
     padding: 61px 0 72px 0;
 
@@ -655,7 +596,7 @@ input{
     background: #162C4E;
 }
 
-.subscribe{
+.subscribe {
     position: relative;
 
     padding: 8px;
@@ -666,11 +607,10 @@ input{
 
     border-radius: 40px;
     background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, .8);
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, .5);
 }
-
-.subscribe__errors{
+.subscribe__errors {
     position: absolute;
     top: -83%;
     left: 50%;
@@ -678,36 +618,11 @@ input{
 
     transform: translateX( -50% );
 }
-
-.subscribe__errors_hidden{
+.subscribe__errors_hidden {
     opacity: 0;
     visibility: hidden;
 }
-
-.error-message{
-    background: #ffffff;
-    padding: 5px 20px;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-}
-
-.error-message__text{
-    color: #DF2224
-}
-
-.error-message__text::after{
-    content: '';
-    position: absolute;
-    top: 88%;
-    left: 50%;
-    transform: translateX( -50% ) rotate( 45deg );
-    z-index: 2;
-    background: #ffffff;
-    width: 10px;
-    height: 10px;
-}
-
-.subscribe__input{
+.subscribe__input {
     padding: 6px 0 6px 19px;
 
     width: 100%;
@@ -720,8 +635,7 @@ input{
     font-size: 18px;
     line-height: 150%;
 }
-
-.subscribe__submit{
+.subscribe__submit {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -732,48 +646,63 @@ input{
     border-radius: 50px;
     text-indent: -99999px;
     
-    transition: all 0.3s ease;
+    transition: all .3s ease;
 }
-
-.subscribe__submit:disabled{
+.subscribe__submit:disabled {
     background: #c7c7c7;
-    -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
-    -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, .4);
+    -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, .4);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, .4);
+}
+.subscribe__submit:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+}
+.subscribe__button-icon {
+    stroke: #fff;
+    fill: none;
 }
 
-.subscribe__submit:hover{
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+.error-message {
+    background: #ffffff;
+    padding: 5px 20px;
+    border-radius: 10px;
+    transition: all .3s ease;
 }
-
-.subscribe__button-icon{
-    fill: none
+.error-message__text {
+    color: #DF2224
+}
+.error-message__text::after {
+    content: '';
+    position: absolute;
+    top: 88%;
+    left: 50%;
+    transform: translateX( -50% ) rotate( 45deg );
+    z-index: 2;
+    background: #ffffff;
+    width: 10px;
+    height: 10px;
 }
 
 @media screen and ( max-width: 768px ) {
-    .footer{
+    .footer {
         margin-top: 169px;
     }
 
-    .subscribe{
+    .subscribe {
         max-width: 360px;
         padding: 4px;
     }
-
-    .subscribe__errors{
+    .subscribe__errors {
         top: -130%;
     }
-    
-    .subscribe__input{
+    .subscribe__input {
         font-size: 14px;
     }
-
-    .subscribe__submit{
+    .subscribe__submit {
         width: 33px;
         height: 33px;
     }
-
-    .subscribe__button-icon{
+    .subscribe__button-icon {
         width: 15.35px;
         height: 15.35px;
     }
